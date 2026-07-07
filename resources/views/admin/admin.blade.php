@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="">
-                    <div class="h3 mb-0 mt-3 text-center">
+                    <div class=" h3 mb-0 mt-3 text-center">
                         {{-- si mode sombre text-white --}}
                         <a href="" class="white_text">
                             <!-- Pas d'examen -->

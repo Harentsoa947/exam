@@ -1,11 +1,16 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Auth\loginController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/login', [loginController::class, 'login'])->name('login');
+
 
 Route::get('/admin', [AdminController::class, 'accueil_admin'])->name('admin');
 Route::get('/admin/parametre', [AdminController::class, 'parametre_admin'])->name('admin.param.admin');
