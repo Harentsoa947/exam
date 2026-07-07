@@ -1,0 +1,23 @@
+@font-face {
+    font-family: Poppins;
+    src: url('../font/Poppins-Regular.ttf') format('truetype');
+}
+
+@import '../sass/color.scss' ;
+
+*{
+    font-family: Poppins;
+}
+
+.text-vert{
+    color: $vert;
+}
+.bg-vert{
+    background: $vert;
+}
+.text-rouge{
+    color: $rouger;
+}
+.bg-rouge{
+    background: $rouger;
+}

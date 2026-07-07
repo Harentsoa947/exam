@@ -5,23 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    @vite(['resources/sass/app.scss','resources/css/app.css', 'resources/js/app.js'])
 </head>
-    <div class="py-20">
+    <div class="py-20 text-black/60">
         <div class="">
             <img src="/images/logo.png" alt="" class="w-[2cm] m-auto">
         </div>
         <div class="w-[11cm] m-auto  p-4 text-center">
-            <h3 class="text-2xl font-semibold mb-4">Binvenus dans l'examen de l'hopes formation</h3>
+            <h3 class="text-2xl font-semibold mb-4 text-vert">Binvenus dans l'examen de l'hopes formation</h3>
             <form action="">
-                <input type="email" name="" id="" class="py-2 border-b-2 border-black/10 w-full outline-0  focus:border-green-800"
+                <input type="email" name="" id="" class="py-2 border-b-2 border-black/10 w-full outline-0  focus:border-[rgb(104,167,2)]"
                 placeholder="Email..">
-                <input type="password" name="" id="password" class="py-2 border-b-2 border-black/10 w-full mt-3 outline-0 focus:border-green-800"
-                placeholder="Email..">
+                <input type="password" name="" id="password" class="py-2 border-b-2 border-black/10 w-full outline-0  focus:border-[rgb(104,167,2)] mt-5"
+                placeholder="Mot de passe">
                 <div class="mt-2 text-left">
                     <input type="checkbox" name="" id="afficherPassword">
                     <label for="afficherPassword">Afficher mot de passe</label>
                 </div>
-                <button type="submit" class="p-1 rounded-md w-full bg-black/50 mt-5">
+                <button type="submit" class="p-1 rounded-md w-full  mt-5 bg-rouge">
                     Connexion
                 </button>
             </form>
