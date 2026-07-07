@@ -93,6 +93,12 @@
                 
             </li>
         </ul>
+        <form action="{{ route('logout') }}" method="POST" class="inline">
+            @csrf
+            <button type="submit" class="hover:underline">
+                Deconnexion
+            </button>
+        </form>
         
         <hr>
         

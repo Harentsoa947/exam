@@ -8,6 +8,26 @@
 *{
     font-family: Poppins;
 }
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+@media (max-width:640px) {
+    .container{
+        width: 90%;
+    }
+}
+@media (max-width:1024px) {
+    .container{
+        width: 85%;
+    }
+}
+@media (min-width:1280px) {
+    .container{
+        width: 80%;
+    }
+}
 
 .text-vert{
     color: $vert;
@@ -20,4 +40,15 @@
 }
 .bg-rouge{
     background: $rouger;
+}
+
+.header-link-examen{
+    .links-examen{
+        display: none;
+    }
+    &:hover{
+        .links-examen{
+            display: block;
+        }
+    }
 }
