@@ -1,4 +1,4 @@
-@extends('layouts.layouthead')
+@extends('layouts.student-layouts.layouthead')
 @section('contenue-student')
     
 <section>

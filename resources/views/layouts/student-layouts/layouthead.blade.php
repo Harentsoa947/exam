@@ -10,7 +10,7 @@
      @vite(['resources/sass/app.scss','resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="text-black/60">
-    @include('layouts.header')
+    @include('layouts.student-layouts.header')
     @yield('contenue-student')
 </body>
 </html>
