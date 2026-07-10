@@ -4,9 +4,10 @@
 }
 
 @import '../sass/color.scss' ;
+@import '../sass/style.scss';
 
 *{
-    font-family: Poppins;
+    font-family: sans-serif;
 }
 .container{
     width: 80%;
@@ -51,4 +52,7 @@
             display: block;
         }
     }
+}
+button{
+    cursor: pointer;
 }

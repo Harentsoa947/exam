@@ -12,7 +12,7 @@ class loginController extends Controller
     {
         if (Auth::check()) {
             return match (Auth::user()->role) {
-                'admin' => redirect()->route('admin'),
+                'admin' => redirect()->route('admin.dashboard'),
                 'prof' => redirect()->route('prof.dashboard'),
                 'student' => redirect()->route('home'),
             };

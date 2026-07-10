@@ -20,3 +20,4 @@ Route::post('/admin/register', [AdminRegisterController::class, 'store'])->name(
 
 require __DIR__.'/student.php';
 require __DIR__.'/admin.php';
+require __DIR__.'/prof.php';

@@ -17,14 +17,20 @@
             </li>
             <li>
                 <a  href="{{ route('admin.prof.index') }}"
-                    class="inline-block px-2 py-1">
+                    @class([
+                        'inline-block px-2 py-1', 
+                        'active' => request()->routeIs('admin.prof.*')
+                    ])>
                     <i class="fa-solid fa-user-tie me-2"></i>
                     Profs
                 </a>
             </li>
             <li>
-                <a href=""
-                    class="inline-block px-2 py-1">
+                <a href="{{ route('admin.etudiant') }}"
+                    @class([
+                        'inline-block px-2 py-1', 
+                        'active' => request()->routeIs('admin.etudiant')
+                    ])>
                     <i class="fa-solid fa-user-graduate me-2"></i>
                     Etudiants
                 </a>
