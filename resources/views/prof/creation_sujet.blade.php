@@ -42,32 +42,29 @@
                 </td>
             </tr>
             <tr class="border-b hover:bg-gray-50 transition">
-                <td class="px-6 py-4 font-medium text-gray-700">QCM <span style="color: red" class="font-bold">*</span></td>
+                <td class="px-6 py-4 font-medium text-gray-700">QCM<span style="color: red" class="font-bold">*</span></td>
                 <td class="px-6 py-4 text-right">
-                    <a href="{{ route('prof.choix_sujet.qcm') }}" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                    <a href="{{ route('prof.choix_sujet.qcm') }}" class="px-4 py-2  bg-vert text-white rounded-lg hover:bg-blue-700 transition">
                         Construire
                     </a>
                 </td>
             </tr>
 
-            <tr class="border-b hover:bg-gray-50 transition">
+            {{-- <tr class="border-b hover:bg-gray-50 transition">
                 <td class="px-6 py-4 font-medium text-gray-700">Rédaction <span style="color: red" class="font-bold">*</span></td>
                 <td class="px-6 py-4 text-right">
                     <button class="px-4 py-2 bg-rouge text-white rounded-lg hover:bg-blue-700 transition">
                         Fini
                     </button>
-                    {{-- <a href="{{ route('prof.choix_sujet.qcm') }}" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                        Construire
-                    </a> --}}
                 </td>
                 <td class="px-6 py-4 text-right">20 Questions</td>
-            </tr>
+            </tr> --}}
 
             <tr class="border-b hover:bg-gray-50 transition">
                 <td class="px-6 py-4 font-medium text-gray-700">Relier par flèche <span style="color: red" class="font-bold">*</span></td>
                 
                 <td class="px-6 py-4 text-right">
-                    <a href="{{ route('prof.choix_sujet.relier_fleche') }}" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                    <a href="{{ route('prof.choix_sujet.relier_fleche') }}" class="px-4 py-2 bg-vert text-white rounded-lg hover:bg-blue-700 transition">
                         Construire
                     </a>
                 </td>
@@ -77,7 +74,7 @@
             <tr class="border-b hover:bg-gray-50 transition">
                 <td class="px-6 py-4 font-medium text-gray-700">Mots croisés <span style="color: red" class="font-bold">*</span></td>
                 <td class="px-6 py-4 text-right">
-                    <a href="{{ route('prof.chois_sujet.mots_croises') }}" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                    <a href="{{ route('prof.choix_sujet.mots_croises') }}" class="px-4 py-2 bg-vert text-white rounded-lg hover:bg-blue-700 transition">
                         Construire
                     </a>
                 </td>
@@ -86,27 +83,27 @@
             <tr class="border-b hover:bg-gray-50 transition">
                 <td class="px-6 py-4 font-medium text-gray-700">Compréhension du texte <span style="color: red" class="font-bold">*</span></td>
                 <td class="px-6 py-4 text-right">
-                    <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                    <a href="{{ route('prof.choix_sujet.comprehension') }}" class="px-4 py-2  bg-vert text-white rounded-lg hover:bg-blue-700 transition">
                         Construire
-                    </button>
+                    </a>
                 </td>
             </tr>
 
             <tr class="border-b hover:bg-gray-50 transition">
-                <td class="px-6 py-4 font-medium text-gray-700">Jeu de pendule <span style="color: red" class="font-bold">*</span></td>
+                <td class="px-6 py-4 font-medium text-gray-700">Jeu de pendu <span style="color: red" class="font-bold">*</span></td>
                 <td class="px-6 py-4 text-right">
-                    <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                    <a href="{{ route('prof.choix_sujet.pendule') }}" class="px-4 py-2  bg-vert text-white rounded-lg hover:bg-blue-700 transition">
                         Construire
-                    </button>
+                    </a>
                 </td>
             </tr>
 
             <tr class="hover:bg-gray-50 transition">
                 <td class="px-6 py-4 font-medium text-gray-700">Rédaction <span style="color: red" class="font-bold">*</span></td>
                 <td class="px-6 py-4 text-right">
-                    <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                    <a href="{{ route('prof.choix_sujet.redaction') }}" class="px-4 py-2  bg-vert text-white rounded-lg hover:bg-blue-700 transition">
                         Construire
-                    </button>
+                    </a>
                 </td>
             </tr>
 

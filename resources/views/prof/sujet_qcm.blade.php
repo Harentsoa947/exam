@@ -26,7 +26,7 @@
                 max="10"
                 placeholder="Ex : 10"
                 id="total"
-                class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none">
 
         </div>
 
@@ -40,8 +40,9 @@
         <div class="flex justify-end">
 
             <button
-                class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-semibold transition">
-                Enregistrer le QCM
+                class="bg-rouge text-white px-8 py-3 rounded-xl shadow-lg hover:scale-105 duration-200">
+                <i class="fa-solid fa-floppy-disk mr-2"></i>
+                Enregistrer
             </button>
 
         </div>

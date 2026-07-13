@@ -8,6 +8,7 @@
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
      @vite(['resources/sass/app.scss','resources/css/app.css', 'resources/js/app.js'])
+     
 </head>
 <body class="text-black/60">
     @include('layouts.prof-layouts.layoutsed')
@@ -19,8 +20,14 @@
         <script src="{{ asset('js/fleche.js') }}"></script>
         <script src="{{ asset('js/relation.js') }}"></script>
     @endif
-    @if (request()->routeIs('prof.chois_sujet.mots_croises'))
+    @if (request()->routeIs('prof.choix_sujet.mots_croises'))
         <script src="{{ asset('js/mots_croises.js') }}"></script>
+    @endif
+    @if (request()->routeIs('prof.choix_sujet.pendule'))
+        <script src="{{ asset('js/pendule.js') }}"></script>
+    @endif
+    @if (request()->routeIs('prof.choix_sujet.comprehension'))
+        <script src="{{ asset('js/comprehension.js') }}"></script>
     @endif
 </body>
 </html>

@@ -27,7 +27,7 @@ function creationQuestionQCM(items){
     
         <div class="flex items-center gap-3">
     
-            <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm" id="aff_points-${items}">
+            <span class="bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm" id="aff_points-${items}">
                 0 points
             </span>
     
@@ -45,7 +45,7 @@ function creationQuestionQCM(items){
             <label class="block font-semibold text-gray-700 mb-2">
                 Nombre de points
             </label>
-            <input type="number" placeholder="" class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none" id="points-${items}">
+            <input type="number" placeholder="" class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none" id="points-${items}">
         </div>
         <div class="mb-6">
     
@@ -56,7 +56,8 @@ function creationQuestionQCM(items){
             <textarea
                 rows="3"
                 placeholder="Saisissez votre question..."
-                class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none resize-none"></textarea>
+                class="w-full rounded-xl border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-green-500 outline-none resize-none">
+            </textarea>
     
         </div>
     
@@ -70,16 +71,15 @@ function creationQuestionQCM(items){
             </label>
     
             <input
-                type="file"
-                class="block w-full border border-dashed border-gray-300 rounded-xl p-3 file:bg-blue-600 file:text-white file:border-0 file:px-4 file:py-2 file:rounded-lg file:mr-4 hover:file:bg-blue-700">
-    
+            type="file"
+            class="file-bg-vert block w-full border border-dashed border-gray-300 rounded-xl p-3">
         </div>
 
         <div class="mb-6">
             <label class="block font-semibold text-gray-700 mb-2">
                 Type de question
             </label>
-            <select name="" id="question_type-${items}" class="rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none w-full">
+            <select name="" id="question_type-${items}" class="rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none w-full">
                 <option value=""></option>
                 <option value="mult">Choix multiple</option>
                 <option value="bool">Vrai ou Faux</option>
@@ -129,7 +129,7 @@ total.addEventListener('input', function(){
             if(this.value == 'mult'){
                 let choix_multiple = document.querySelector(`.choix_multiple-${i}`)
                 let contenu = `<div class="mb-6">
-                    <select name="" id="multiple-${i}" class="rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none w-full">
+                    <select name="" id="multiple-${i}" class="rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none w-full">
                         <option value=""></option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -186,12 +186,12 @@ function creationPropositionChamp(iden){
         <input 
             type="text" 
             placeholder="Proposition ${iden}"
-            class="flex rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none w-full">
+            class="flex rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none w-full">
 
         <input 
             type="radio" 
             name="bonne_reponse_1"
-            class="w-5 h-5 cursor-pointer accent-blue-600">
+            class="w-5 h-5 cursor-pointer accent-green-600">
     </div>  
 </div>`
 }

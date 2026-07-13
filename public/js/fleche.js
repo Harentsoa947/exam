@@ -4,8 +4,11 @@ let toutesLesLignes = [];
 let ligneSelectionnee = null;
 let elementSelectionne = null;
 nombreCouples.addEventListener('input', function(){
+    if (this.value > 5) {
+        alert('5 maximum')
+        return
+    }
     reinitialiser();
-    // console.log(this.value);
     bloc_principal.innerHTML = affichage_base()
     nbr_aff(this.value);
     creerRelation();
@@ -48,7 +51,7 @@ function affichage_base(){
         </div>
         <div class="flex justify-end mt-8">
     
-            <button class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-semibold transition">
+            <button class="bg-rouge text-white px-8 py-3 rounded-xl shadow-lg hover:scale-105 duration-200">
                 Enregistrer
             </button>
     

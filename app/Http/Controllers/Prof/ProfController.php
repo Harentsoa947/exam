@@ -29,4 +29,16 @@ class ProfController extends Controller
     {
         return view('prof/mots_croises');
     }
+    public function pendule()
+    {
+        return view('prof/pendule');
+    }
+    public function redaction()
+    {
+        return view('prof/redaction');
+    }
+    public function comprehension()
+    {
+        return view('prof/comprehension');
+    }
 }

@@ -56,3 +56,16 @@
 button{
     cursor: pointer;
 }
+.file-bg-vert::file-selector-button {
+    background: $vert;
+    color: white;
+    border: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+    cursor: pointer;
+
+    &:hover {
+        background: darken($vert, 10%);
+    }
+}
