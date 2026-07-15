@@ -1,0 +1,71 @@
+@font-face {
+    font-family: Poppins;
+    src: url('../font/Poppins-Regular.ttf') format('truetype');
+}
+
+@import '../sass/color.scss' ;
+@import '../sass/style.scss';
+
+*{
+    font-family: sans-serif;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+@media (max-width:640px) {
+    .container{
+        width: 90%;
+    }
+}
+@media (max-width:1024px) {
+    .container{
+        width: 85%;
+    }
+}
+@media (min-width:1280px) {
+    .container{
+        width: 80%;
+    }
+}
+
+.text-vert{
+    color: $vert;
+}
+.bg-vert{
+    background: $vert;
+}
+.text-rouge{
+    color: $rouger;
+}
+.bg-rouge{
+    background: $rouger;
+}
+
+.header-link-examen{
+    .links-examen{
+        display: none;
+    }
+    &:hover{
+        .links-examen{
+            display: block;
+        }
+    }
+}
+button{
+    cursor: pointer;
+}
+.file-bg-vert::file-selector-button {
+    background: $vert;
+    color: white;
+    border: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+    cursor: pointer;
+
+    &:hover {
+        background: darken($vert, 10%);
+    }
+}
