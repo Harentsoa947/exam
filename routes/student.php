@@ -5,5 +5,5 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [studentHomeCotroller::class, 'index'])
-    ->name('home')
-    ->middleware('auth');
+    ->name('home');
+    // ->middleware('auth')

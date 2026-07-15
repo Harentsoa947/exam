@@ -12,4 +12,6 @@ Route::controller(ProfController::class)->group(function(){
     Route::get('prof/choix_sujet/pendule', 'pendule')->name('prof.choix_sujet.pendule');
     Route::get('prof/choix_sujet/redaction', 'redaction')->name('prof.choix_sujet.redaction');
     Route::get('prof/choix_sujet/comprehension', 'comprehension')->name('prof.choix_sujet.comprehension');
+
+    Route::get('prof/info_examen', 'info_examen')->name('prof.info_examen');
 });

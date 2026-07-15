@@ -4,12 +4,25 @@ namespace App\Http\Controllers\Prof;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProfController extends Controller
 {
-    public function prof()
+    public function prof(Request $req)
     {
-        return view('prof/prof');
+        if(!$req->session()->has('proffesseur')){
+            return view('/auth/login');
+        }
+        // dd(session('proffesseur')['id']);
+        // dd(session('proffesseur'));
+        $prof_id = session('proffesseur')['id'];
+        $prof_category = session('proffesseur')['category_id'];
+        $examen = DB::table('examen')
+            ->where('prof_id', $prof_id)
+            ->where('category_id', $prof_category)
+            ->get();
+        // dd($examen);
+        return view('prof/prof', compact('examen'));
     }
 
     public function creation_sujet()
@@ -40,5 +53,10 @@ class ProfController extends Controller
     public function comprehension()
     {
         return view('prof/comprehension');
+    }
+
+    public function info_examen()
+    {
+        return view('prof/info_examen');
     }
 }

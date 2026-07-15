@@ -11,12 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('profs', function (Blueprint $table) {
+        Schema::disableForeignKeyConstraints();
+
+        Schema::create('role_utilisateur', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('categorie_id')->constrained('categories')->cascadeOnDelete();
+            $table->string('role');
             $table->timestamps();
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('profs');
+        Schema::dropIfExists('role_utilisateur');
     }
 };
