@@ -12,5 +12,25 @@
 <body class="text-black/60">
     @include('layouts.student-layouts.header')
     @yield('contenue-student')
+
+    <script>
+    function openModal(id) {
+        const modal = document.getElementById(id);
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+
+    function closeModal(id) {
+        const modal = document.getElementById(id);
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
+
+    document.addEventListener('click', function (e) {
+        if (e.target.classList.contains('fixed') && e.target.id) {
+            closeModal(e.target.id);
+        }
+    });
+    </script>
 </body>
 </html>

@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->enum('role', ['admin', 'prof', 'student'])->default('admin')->after('email');
+        Schema::create('pointiller_web_choices', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('pointiller_web_reponse_id')->constrained('pointiller_web_reponses')->cascadeOnDelete();
+            $table->string('texte');
+            $table->timestamps();
         });
     }
 
@@ -21,8 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('role');
-        });
+        Schema::dropIfExists('pointiller_web_choices');
     }
 };

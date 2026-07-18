@@ -17,29 +17,23 @@
 </section>
 <section>
     <div class="container">
-        {{-- <h2 class="font-semibold mb-4">Selectionné votre domaine pour voir l'examen en cour</h2> --}}
         <div class="bg-black/5 p-2 py-4 flex flex-wrap gap-x-2 lg:justify-center">
-            <button class="border-2 border-black/7 bg-white rounded-md uppercase font-semibold p-2 px-5">
-                Français
-            </button>
-            <button class="border-2 border-black/7 bg-white rounded-md uppercase font-semibold p-2 px-5">
-                Anglais
-            </button>
-            <button class="border-2 border-black/7 bg-white rounded-md uppercase font-semibold p-2 px-5">
-                Métier: Frs/Ang
-            </button>
-            <button class="border-2 border-black/7 bg-white rounded-md uppercase font-semibold p-2 px-5">
-                Dev
-            </button>
-            <button class="border-2 border-black/7 bg-white rounded-md uppercase font-semibold p-2 px-5">
-                Python
-            </button>
-            <button class="border-2 border-black/7 bg-white rounded-md uppercase font-semibold p-2 px-5">
-                Design
-            </button>
-            <button class="border-2 border-black/7 bg-white rounded-md uppercase font-semibold p-2 px-5">
-                Bureautique
-            </button>
+            {{-- @foreach ($categories as $categorie)  
+            @if(\Illuminate\Support\Facades\Route::has('examen.' . $categorie->slug))
+            <a href="{{route('examen.'.$categorie->slug)}}" class="border-2 border-black/7 bg-white rounded-md uppercase font-semibold p-2 px-5">
+                {{$categorie->nom}}
+            </a>
+            @else
+            <span class="border-2 border-black/7 bg-white rounded-md uppercase font-semibold p-2 px-5">
+                {{$categorie->nom}}
+            </span>
+            @endif  
+            @endforeach --}}
+            @foreach ($categories as $categorie)
+                <a href="{{ route('student.examen.show', $categorie->slug) }}" class="border-2 border-black/7 bg-white rounded-md uppercase font-semibold p-2 px-5">
+                    {{ $categorie->nom }}
+                </a>
+            @endforeach
         </div>
     </div>
 </section>

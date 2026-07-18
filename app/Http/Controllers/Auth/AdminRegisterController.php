@@ -49,7 +49,7 @@ class AdminRegisterController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('admin')
+        return redirect()->route('admin.dashboard')
             ->with('success', 'Compte admin ajouter avec succes.');
     }
 }

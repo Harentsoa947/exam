@@ -17,24 +17,19 @@
     </div>
 
     <div class="mb-4">
-        <label class="block text-sm font-medium">Catégorie</label>
-        <select name="categorie_id" class="border rounded w-full p-2">
-            <option value="">-- Choisir --</option>
-            @foreach ($categories as $categorie)
-                <option value="{{ $categorie->id }}" @selected(old('categorie_id') == $categorie->id)>
-                    {{ $categorie->nom }}
-                </option>
-            @endforeach
-        </select>
-        @error('categorie_id') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
+        <label class="block text-sm font-medium">Email</label>
+        <input type="file" name="image" value="{{ old('image') }}" class="border rounded w-full p-2">
+        @error('image') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
     </div>
-{{-- 
-    <div class="mb-4">
-        <label class="block text-sm font-medium">Fichier</label>
-        <input type="file" name="file" class="border rounded w-full p-2">
-        @error('file') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
-    </div> --}}
 
+    <div class="mb-4">
+        <label class="block text-sm font-medium">Créer le mot de passe</label>
+        <input type="text" name="password" value="{{ old('email') }}" class="border rounded w-full p-2">
+        @error('password') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
+    </div>
     <button type="submit" class="bg-rouge text-white px-4 py-2 rounded">Enregistrer</button>
-</form>
+</form> 
+
 @endsection
+
+

@@ -1,10 +1,76 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminDasboardController;
+use App\Http\Controllers\Admin\AdminExamenController;
+use App\Http\Controllers\Admin\AdminExamenWebController;
 use App\Http\Controllers\Admin\AdminProfController;
+use App\Http\Controllers\Admin\AdminStudentController;
+use App\Http\Controllers\Admin\AdminStudentExameQcmController;
+use App\Http\Controllers\Admin\AdminTypeExerciceController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/admin', [AdminDasboardController::class, 'index'])->name('admin.dashboard');
-Route::get('/admin/prof/index', [AdminProfController::class, 'index'])->name('admin.prof.index');
-Route::get('/admin/prof/create', [AdminProfController::class, 'create'])->name('admin.prof.create');
-Route::post('/admin/prof/store', [AdminProfController::class, 'store'])->name('admin.prof.store');
+Route::controller(AdminProfController::class)->group(function(){
+    Route::get('/admin/prof/index',  'index')
+        ->name('admin.prof.index');
+    Route::get('/admin/prof/create',  'create')
+        ->name('admin.prof.create');
+    Route::post('/admin/prof/store',  'store')
+        ->name('admin.prof.store');
+    Route::delete('/admin/prof/{prof}',  'destroy')
+        ->name('admin.prof.destroy');
+    Route::get('/admin/prof/{prof}/assign-categorie',  'assignCategorie')
+        ->name('admin.prof.assignCategorie');
+    Route::post('/admin/prof/{prof}/assign-categorie',  'storeCategorie')
+        ->name('admin.prof.storeCategorie');
+});
+
+Route::controller(AdminStudentController::class)->group(function(){
+    Route::get('/admin/student/index',  'index')
+        ->name('admin.student.index');
+    Route::get('admin/student/create', 'create')
+        ->name('admin.student.create');
+    Route::post('/admin/student/store',  'store')
+        ->name('admin.student.store');
+    Route::delete('/admin/student/{student}',  'destroy')
+        ->name('admin.student.destroy');
+    Route::get('/admin/student/{student}/assign-categorie',  'assignCategorie')
+        ->name('admin.student.assignCategorie');
+    Route::post('/admin/student/{student}/assign-categorie',  'storeCategorie')
+        ->name('admin.student.storeCategorie');
+    Route::get('admin/student/{student}/show', 'show')
+        ->name('admin.student.show');
+});
+
+Route::get('/admin/student/examen/{examen}/qcm', [AdminStudentExameQcmController::class, 'index'])
+    ->name('admin.student.examen.qcm');
+
+Route::controller(AdminExamenController::class)->group(function(){
+     Route::get('/admin/examen/create', 'create')->name('admin.examen.create');
+     Route::post('/admin/examen/store', 'store')->name('admin.examen.store');
+     Route::delete('admin/examen/{examen}', 'destroy')->name('admin.examen.destroy');
+});
+    
+Route::controller(AdminExamenWebController::class)->group(function(){
+    Route::get('/admin/exam-web', 'index')->name('admin.examen.web');
+});
+
+Route::controller(AdminCategoryController::class)->group(function(){
+    Route::get('/admin/categorie', 'index')->name('admin.categorie.index');
+    Route::get('/admin/categorie/create', 'create')->name('admin.categorie.create');
+    Route::post('/admin/categorie/store', 'store')->name('admin.categorie.store');
+    Route::get('/admin/categorie/{categorie}/edit', 'edit')->name('admin.categorie.edit');
+    Route::put('/admin/categorie/{categorie}/update', 'update')->name('admin.categorie.update');
+    Route::delete('/admin/categorie/{categorie}', 'destroy')->name('admin.categorie.destroy');
+
+});
+
+Route::controller(AdminTypeExerciceController::class)->group(function(){
+    Route::get('/admin/type-exercice', 'index')->name('admin.typeExercice.index');
+    Route::get('/admin/type-exercice/create', 'create')->name('admin.typeExercice.create');
+    Route::post('/admin/type-exercice/store', 'store')->name('admin.typeExercice.store');
+    Route::get('/admin/type-exercice/{typeExercice}/edit', 'edit')->name('admin.typeExercice.edit');
+    Route::put('/admin/type-exercice/{typeExercice}', 'update')->name('admin.typeExercice.update');
+    Route::delete('/admin/type-exercice/{typeExercice}', 'destroy')->name('admin.typeExercice.destroy');
+});

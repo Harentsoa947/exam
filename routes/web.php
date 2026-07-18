@@ -16,7 +16,6 @@ Route::get('/admin/register', [AdminRegisterController::class, 'admin_register']
 Route::post('/admin/register', [AdminRegisterController::class, 'store'])->name('admin.register.store');
 
 
-
-
+require __DIR__.'/prof.php';
 require __DIR__.'/student.php';
 require __DIR__.'/admin.php';

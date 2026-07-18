@@ -30,5 +30,30 @@ class User extends Authenticatable
         ];
     }
 
+    protected $fillable = [
+        'name',
+        'email',
+        'image',
+        'password',
+        'role', 
+    ];
+
+    public function prof()
+    {
+        return $this->hasOne(Prof::class);
+    }
+
+    public function student()
+    {
+        return $this->hasOne(Student::class);
+    }
+
+    public function examens()
+    {
+        return $this->belongsToMany(Examen::class, 'student_examen')
+            ->withPivot('termine', 'date_debut', 'date_fin')
+            ->withTimestamps();
+    }  
     
+
 }
