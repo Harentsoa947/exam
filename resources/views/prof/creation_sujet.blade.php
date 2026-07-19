@@ -6,163 +6,230 @@
     </a>
 </div>
 
-{{-- <h1 class="text-vert text-2xl font-semibold mb-4">Choix partie sujet</h1> --}}
 <div class="flex justify-end me-7">
-    <button
-        class="bg-rouge text-white px-8 py-3 rounded-xl shadow-lg hover:scale-105 duration-200">
+    <button class="bg-rouge text-white px-8 py-3 rounded-xl shadow-lg hover:scale-105 duration-200 font-medium">
         <i class="fa-solid fa-plus me-3"></i>
         Ajouter
     </button>
-
 </div>
-<div class="mx-auto mt-5 bg-gray-100 rounded-xl shadow-lg overflow-hidden">
-    <div class="flex items-center justify-between my-3 p-4 uppercase ">
-        <h1 class="font-bold text-vert">Call Français (1/25)</h1>
-        <p>12 Mars 2030</p>
+
+<div class="mx-auto mt-5 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden w-full">
+    
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 bg-gray-50 border-b border-gray-100 gap-4">
+        <div>
+            <h1 class="font-bold text-2xl text-vert uppercase tracking-wide">Call Français (1/25)</h1>
+            <p class="text-sm text-gray-400 mt-1">Configuration globale de l'épreuve</p>
+        </div>
+        <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl shadow-sm border border-gray-100 text-gray-600 font-semibold text-sm">
+            <i class="fa-regular fa-calendar text-rouge"></i>
+            <span>12 Mars 2030</span>
+        </div>
     </div>
 
-    <div class="ps-7 ">
-        <a href="" class="bg-rouge text-white rounded-lg px-4 py-2">Importer pdf</a>
+    <div class="p-6 border-b border-gray-50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white">
+        <a href="" class="inline-flex items-center gap-2 bg-rouge/10 text-rouge hover:bg-rouge hover:text-white rounded-xl px-5 py-2.5 font-semibold text-sm transition-all duration-200 border border-rouge/20 shadow-sm">
+            <i class="fa-solid fa-file-pdf"></i>
+            Importer PDF
+        </a>
+        
+        <div class="inline-flex items-center bg-gray-50 border border-gray-200 rounded-xl shadow-sm overflow-hidden focus-within:border-vert transition-colors">
+            <span class="px-4 py-3 text-sm font-bold text-gray-500 bg-gray-100/80 border-r border-gray-200 whitespace-nowrap">
+                Durée de l'examen
+            </span>
+            <input type="number" value="120" min="1" class="w-20 px-3 py-2 text-center font-bold text-gray-800 bg-transparent focus:outline-none">
+            <span class="px-4 py-3 bg-transparent text-gray-500 text-xs font-semibold uppercase tracking-wider">
+                minutes
+            </span>
+        </div>
+    </div>
+
+    <div class="w-full overflow-x-auto custom-scrollbar">
+        <table class="w-full text-sm text-left text-gray-600 min-w-[900px] border-collapse">
+            <thead>
+                <tr class="bg-gray-50/70 text-xs uppercase text-gray-500 font-bold border-b border-gray-100">
+                    <th scope="col" class="px-6 py-4">Type de sujet</th>
+                    <th scope="col" class="px-6 py-4 text-center">Nombre de questions</th>
+                    <th scope="col" class="px-6 py-4 text-center">Nombre de points</th>
+                    <th scope="col" class="px-6 py-4 text-right pr-12">Action</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100 bg-white">
+                <tr class="hover:bg-gray-50/60 transition-colors">
+                    <td class="px-6 py-4 font-semibold text-gray-800">
+                        QCM<span class="text-rouge ml-1 font-bold">*</span>
+                    </td>
+                    <td class="px-6 py-4 text-center font-bold text-gray-700">
+                        <span class="inline-block px-3 py-1 bg-gray-100 text-gray-800 rounded-lg text-xs">20</span>
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                        <span class="inline-flex items-center px-2.5 py-1 text-xs font-bold bg-amber-50 text-amber-700 rounded-full border border-amber-200">
+                            <i class="fa-solid fa-star mr-1 text-amber-500 text-[10px]"></i>
+                            12 pts
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-right pr-12">
+                        <div class="flex flex-wrap gap-2 justify-end items-center">
+                            <a href="{{ route('prof.choix_sujet.qcm') }}" class="w-9 h-9 flex items-center justify-center bg-vert text-white rounded-xl hover:bg-vert/90 shadow-sm transition-all duration-200 hover:scale-105">
+                                <i class="fa-solid fa-pen text-sm"></i>  
+                            </a>
+                            <a href="{{ route('prof.choix_sujet.qcm.vue') }}" class="w-9 h-9 flex items-center justify-center bg-blue-600 text-white rounded-xl hover:bg-blue-700 shadow-sm transition-all duration-200 hover:scale-105">
+                                <i class="fa-solid fa-eye text-sm"></i>
+                            </a>
+                            <a href="" class="w-9 h-9 flex items-center justify-center bg-rouge text-white rounded-xl hover:bg-rouge/90 shadow-sm transition-all duration-200 hover:scale-105">
+                                <i class="fa-solid fa-trash text-sm"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50/60 transition-colors">
+                    <td class="px-6 py-4 font-semibold text-gray-800">
+                        Relier par flèche<span class="text-rouge ml-1 font-bold">*</span>
+                    </td>
+                    <td class="px-6 py-4 text-center font-bold text-gray-700">
+                        <span class="inline-block px-3 py-1 bg-gray-100 text-gray-800 rounded-lg text-xs">1</span>
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                        <span class="inline-flex items-center px-2.5 py-1 text-xs font-bold bg-amber-50 text-amber-700 rounded-full border border-amber-200">
+                            <i class="fa-solid fa-star mr-1 text-amber-500 text-[10px]"></i>
+                            19 pts
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-right pr-12">
+                        <div class="flex flex-wrap gap-2 justify-end items-center">
+                            <a href="{{ route('prof.choix_sujet.relier_fleche') }}" class="w-9 h-9 flex items-center justify-center bg-vert text-white rounded-xl hover:bg-vert/90 shadow-sm transition-all duration-200 hover:scale-105">
+                                <i class="fa-solid fa-pen text-sm"></i>
+                            </a>
+                            <a href="{{ route('prof.choix_sujet.relier_fleche.vue') }}" class="w-9 h-9 flex items-center justify-center bg-blue-600 text-white rounded-xl hover:bg-blue-700 shadow-sm transition-all duration-200 hover:scale-105">
+                                <i class="fa-solid fa-eye text-sm"></i>
+                            </a>
+                            <a href="" class="w-9 h-9 flex items-center justify-center bg-rouge text-white rounded-xl hover:bg-rouge/90 shadow-sm transition-all duration-200 hover:scale-105">
+                                <i class="fa-solid fa-trash text-sm"></i>  
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50/60 transition-colors">
+                    <td class="px-6 py-4 font-semibold text-gray-800">
+                        Mots croisés<span class="text-rouge ml-1 font-bold">*</span>
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                        <span class="inline-block px-2.5 py-1 bg-orange-50 text-orange-700 border border-orange-100 rounded-lg text-xs font-medium italic">Pas encore définie</span>
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                        <span class="inline-flex items-center px-2.5 py-1 text-xs font-bold bg-amber-50 text-amber-700 rounded-full border border-amber-200">
+                            <i class="fa-solid fa-star mr-1 text-amber-500 text-[10px]"></i>
+                            1 pt
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-right pr-12">
+                        <div class="flex flex-wrap gap-2 justify-end items-center">
+                            <a href="{{ route('prof.choix_sujet.mots_croises') }}" class="w-9 h-9 flex items-center justify-center bg-vert text-white rounded-xl hover:bg-vert/90 shadow-sm transition-all duration-200 hover:scale-105">
+                                <i class="fa-solid fa-pen text-sm"></i>
+                            </a>
+                            <a href="" class="w-9 h-9 flex items-center justify-center bg-blue-600 text-white rounded-xl hover:bg-blue-700 shadow-sm transition-all duration-200 hover:scale-105">
+                                <i class="fa-solid fa-eye text-sm"></i>
+                            </a>
+                            <a href="" class="w-9 h-9 flex items-center justify-center bg-rouge text-white rounded-xl hover:bg-rouge/90 shadow-sm transition-all duration-200 hover:scale-105">
+                                <i class="fa-solid fa-trash text-sm"></i>  
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50/60 transition-colors">
+                    <td class="px-6 py-4 font-semibold text-gray-800">
+                        Compréhension du texte<span class="text-rouge ml-1 font-bold">*</span>
+                    </td>
+                    <td class="px-6 py-4 text-center font-bold text-gray-700">
+                        <span class="inline-block px-3 py-1 bg-gray-100 text-gray-800 rounded-lg text-xs">19</span>
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                        <span class="inline-flex items-center px-2.5 py-1 text-xs font-bold bg-amber-50 text-amber-700 rounded-full border border-amber-200">
+                            <i class="fa-solid fa-star mr-1 text-amber-500 text-[10px]"></i>
+                            19 pts
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-right pr-12">
+                        <div class="flex flex-wrap gap-2 justify-end items-center">
+                            <a href="{{ route('prof.choix_sujet.comprehension') }}" class="w-9 h-9 flex items-center justify-center bg-vert text-white rounded-xl hover:bg-vert/90 shadow-sm transition-all duration-200 hover:scale-105">
+                                <i class="fa-solid fa-pen text-sm"></i>
+                            </a>
+                            <a href="" class="w-9 h-9 flex items-center justify-center bg-blue-600 text-white rounded-xl hover:bg-blue-700 shadow-sm transition-all duration-200 hover:scale-105">
+                                <i class="fa-solid fa-eye text-sm"></i>
+                            </a>
+                            <a href="" class="w-9 h-9 flex items-center justify-center bg-rouge text-white rounded-xl hover:bg-rouge/90 shadow-sm transition-all duration-200 hover:scale-105">
+                                <i class="fa-solid fa-trash text-sm"></i>  
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50/60 transition-colors">
+                    <td class="px-6 py-4 font-semibold text-gray-800">
+                        Jeu de pendu<span class="text-rouge ml-1 font-bold">*</span>
+                    </td>
+                    <td class="px-6 py-4 text-center font-bold text-gray-700">
+                        <span class="inline-block px-3 py-1 bg-gray-100 text-gray-800 rounded-lg text-xs">19</span>
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                        <span class="inline-flex items-center px-2.5 py-1 text-xs font-bold bg-amber-50 text-amber-700 rounded-full border border-amber-200">
+                            <i class="fa-solid fa-star mr-1 text-amber-500 text-[10px]"></i>
+                            19 pts
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-right pr-12">
+                        <div class="flex flex-wrap gap-2 justify-end items-center">
+                            <a href="{{ route('prof.choix_sujet.pendule') }}" class="w-9 h-9 flex items-center justify-center bg-vert text-white rounded-xl hover:bg-vert/90 shadow-sm transition-all duration-200 hover:scale-105">
+                                <i class="fa-solid fa-pen text-sm"></i>
+                            </a>
+                            <a href="" class="w-9 h-9 flex items-center justify-center bg-blue-600 text-white rounded-xl hover:bg-blue-700 shadow-sm transition-all duration-200 hover:scale-105">
+                                <i class="fa-solid fa-eye text-sm"></i>
+                            </a>
+                            <a href="" class="w-9 h-9 flex items-center justify-center bg-rouge text-white rounded-xl hover:bg-rouge/90 shadow-sm transition-all duration-200 hover:scale-105">
+                                <i class="fa-solid fa-trash text-sm"></i>  
+                            </a>
+                        </div>  
+                    </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50/60 transition-colors">
+                    <td class="px-6 py-4 font-semibold text-gray-800">
+                        Rédaction<span class="text-rouge ml-1 font-bold">*</span>
+                    </td>
+                    <td class="px-6 py-4 text-center font-bold text-gray-700">
+                        <span class="inline-block px-3 py-1 bg-gray-100 text-gray-800 rounded-lg text-xs">19</span>
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                        <span class="inline-flex items-center px-2.5 py-1 text-xs font-bold bg-amber-50 text-amber-700 rounded-full border border-amber-200">
+                            <i class="fa-solid fa-star mr-1 text-amber-500 text-[10px]"></i>
+                            19 pts
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-right pr-12">
+                        <div class="flex flex-wrap gap-2 justify-end items-center">
+                            <a href="{{ route('prof.choix_sujet.redaction') }}" class="w-9 h-9 flex items-center justify-center bg-vert text-white rounded-xl hover:bg-vert/90 shadow-sm transition-all duration-200 hover:scale-105">
+                                <i class="fa-solid fa-pen text-sm"></i>
+                            </a>
+                            <a href="" class="w-9 h-9 flex items-center justify-center bg-blue-600 text-white rounded-xl hover:bg-blue-700 shadow-sm transition-all duration-200 hover:scale-105">
+                                <i class="fa-solid fa-eye text-sm"></i>
+                            </a>
+                            <a href="" class="w-9 h-9 flex items-center justify-center bg-rouge text-white rounded-xl hover:bg-rouge/90 shadow-sm transition-all duration-200 hover:scale-105">
+                                <i class="fa-solid fa-trash text-sm"></i>  
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     
-    
-    <table class="mx-auto rounded-2xl bg-white">
-        <tbody class="text-center">
-            <tr class="">
-                <td class="px-6 py-4 font-bold text-gray-700">Durée de l'examen</td>
-                <td class="px-6 py-4 text-right">
-                    <select name="heure" class="border rounded px-2 py-1">
-                        @for ($i = 0; $i < 6; $i++)
-                            @if ($i == 1)
-                                <option value="{{ $i }}" selected>{{ $i }} h</option>        
-                            @else
-                                    <option value="{{ $i }}">{{ $i }} h</option>    
-                            @endif
-                            
-                        @endfor
-                    </select>
-                    
-                    <select name="minute" class="border rounded px-2 py-1">
-                        @for ($i = 0; $i < 60; $i++)
-                            <option value="{{ $i }}">{{ $i }} min</option>    
-                        @endfor
-                    </select>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="w-full">
-        <tbody>
-            <tr class="border-b hover:bg-gray-50 transition">
-                <td class="px-6 py-4 font-bold text-gray-700">Type de sujet</td>
-                <td class="px-6 py-4 text-right font-bold text-gray-700">Nombre de question</td>
-                <td class="px-6 py-4 text-right font-bold text-gray-700">Nombre de points</td>
-                <td class="px-6 py-4 text-right font-bold text-gray-700">Action</td>
-            </tr>
-            <tr class="border-b hover:bg-gray-50 transition">
-                <td class="px-6 py-4 font-medium text-gray-700">QCM<span style="color: red" class="font-bold">*</span></td>
-                <td class="px-6 py-4 text-right">20</td>
-                <td class="px-6 py-4 text-right">12</td>
-                <td class="px-6 py-4 text-right">
-                    <a href="{{ route('prof.choix_sujet.qcm') }}" class="px-4 py-2  bg-vert text-white rounded-lg hover:bg-blue-700 transition">
-                        <i class="fa-solid fa-pen"></i> Construire
-                    </a>
-                    <a href="" class="px-4 py-2 bg-red-500 rounded-lg ms-4 text-white">
-                        <i class="fa-solid fa-trash"></i> Enlever
-                    </a>
-                </td>
-            </tr>
-
-            {{-- <tr class="border-b hover:bg-gray-50 transition">
-                <td class="px-6 py-4 font-medium text-gray-700">Rédaction <span style="color: red" class="font-bold">*</span></td>
-                <td class="px-6 py-4 text-right">
-                    <button class="px-4 py-2 bg-rouge text-white rounded-lg hover:bg-blue-700 transition">
-                        Fini
-                    </button>
-                </td>
-                <td class="px-6 py-4 text-right">20 Questions</td>
-            </tr> --}}
-
-            <tr class="border-b hover:bg-gray-50 transition">
-                <td class="px-6 py-4 font-medium text-gray-700">Relier par flèche <span style="color: red" class="font-bold">*</span></td>
-                <td class="px-6 py-4 text-right">1</td>
-                <td class="px-6 py-4 text-right">19</td>
-                <td class="px-6 py-4 text-right">
-                    <a href="{{ route('prof.choix_sujet.relier_fleche') }}" class="px-4 py-2 bg-vert text-white rounded-lg hover:bg-blue-700 transition">
-                        <i class="fa-solid fa-pen"></i> Construire
-                    </a>
-                    <a href="" class="px-4 py-2 bg-red-500 rounded-lg ms-4 text-white">
-                        <i class="fa-solid fa-trash"></i> Enlever
-                    </a>
-                </td>
-                
-            </tr>
-
-            <tr class="border-b hover:bg-gray-50 transition">
-                <td class="px-6 py-4 font-medium text-gray-700">Mots croisés <span style="color: red" class="font-bold">*</span></td>
-                <td class="px-6 py-4 text-right">Pas encore définie</td>
-                <td class="px-6 py-4 text-right">1</td>
-                <td class="px-6 py-4 text-right">
-                    <a href="{{ route('prof.choix_sujet.mots_croises') }}" class="px-4 py-2 bg-vert text-white rounded-lg hover:bg-blue-700 transition">
-                        <i class="fa-solid fa-pen"></i> Construire
-                    </a>
-                    <a href="" class="px-4 py-2 bg-red-500 rounded-lg ms-4 text-white">
-                        <i class="fa-solid fa-trash"></i> Enlever
-                    </a>
-                </td>
-            </tr>
-
-            <tr class="border-b hover:bg-gray-50 transition">
-                <td class="px-6 py-4 font-medium text-gray-700">Compréhension du texte <span style="color: red" class="font-bold">*</span></td>
-                <td class="px-6 py-4 text-right">19</td>
-                <td class="px-6 py-4 text-right">19</td>
-                <td class="px-6 py-4 text-right">
-                    <a href="{{ route('prof.choix_sujet.comprehension') }}" class="px-4 py-2  bg-vert text-white rounded-lg hover:bg-blue-700 transition">
-                        <i class="fa-solid fa-pen"></i> Construire
-                    </a>
-                    <a href="" class="px-4 py-2 bg-red-500 rounded-lg ms-4 text-white">
-                        <i class="fa-solid fa-trash"></i> Enlever
-                    </a>
-                </td>
-            </tr>
-
-            <tr class="border-b hover:bg-gray-50 transition">
-                <td class="px-6 py-4 font-medium text-gray-700">Jeu de pendu <span style="color: red" class="font-bold">*</span></td>
-                <td class="px-6 py-4 text-right">19</td>
-                <td class="px-6 py-4 text-right">19</td>
-                <td class="px-6 py-4 text-right">
-                    <a href="{{ route('prof.choix_sujet.pendule') }}" class="px-4 py-2  bg-vert text-white rounded-lg hover:bg-blue-700 transition">
-                        <i class="fa-solid fa-pen"></i> Construire
-                    </a>
-                    <a href="" class="px-4 py-2 bg-red-500 rounded-lg ms-4 text-white">
-                        <i class="fa-solid fa-trash"></i> Enlever
-                    </a>
-                </td>
-            </tr>
-
-            <tr class="hover:bg-gray-50 transition">
-                <td class="px-6 py-4 font-medium text-gray-700">Rédaction <span style="color: red" class="font-bold">*</span></td>
-                <td class="px-6 py-4 text-right">19</td>
-                <td class="px-6 py-4 text-right">19</td>
-                <td class="px-6 py-4 text-right">
-                    <a href="{{ route('prof.choix_sujet.redaction') }}" class="px-4 py-2  bg-vert text-white rounded-lg hover:bg-blue-700 transition">
-                        <i class="fa-solid fa-pen"></i> Construire
-                    </a>
-                    <a href="" class="px-4 py-2 bg-red-500 rounded-lg ms-4 text-white">
-                        <i class="fa-solid fa-trash"></i> Enlever
-                    </a>
-                </td>
-            </tr>
-
-            
-        </tbody>
-    </table>
-    <div class="flex items-center justify-center my-3">
-        <button class="px-4 py-2 bg-rouge text-white rounded-lg hover:bg-blue-700 transition">
-            <i class="fa-solid fa-paper-plane me-3"></i>
+    <div class="flex items-center justify-center p-6 bg-gray-50 border-t border-gray-100">
+        <button class="px-8 py-3 bg-vert text-white font-semibold rounded-xl shadow-md hover:bg-vert/95 transition-all duration-200 hover:scale-105 flex items-center gap-2">
+            <i class="fa-solid fa-paper-plane text-xs"></i>
             Envoyer le sujet
         </button>
     </div>
-    
 </div>
 @endsection

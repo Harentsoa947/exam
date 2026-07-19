@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('sujets', function (Blueprint $table) {
             $table->id();
             $table->string('titre');
-            $table->foreignId('examen_id')->constrained('examen');
+            // $table->foreignId('examen_id')->constrained('examen');
             $table->foreignId('prof_id')->constrained('utilisateurs');
             $table->timestamps();
             // $table->integer('examen_id')->index();

@@ -1,4 +1,4 @@
-<div class="bg-white p-2 px-3 w-[6cm] rounded-md" style="position: sticky">
+<div class="bg-white p-2 px-3 w-[6cm] rounded-md">
     <div class="text-vert font-bold text-3xl px-2">
         Prof
     </div>

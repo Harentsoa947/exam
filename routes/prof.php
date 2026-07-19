@@ -14,4 +14,17 @@ Route::controller(ProfController::class)->group(function(){
     Route::get('prof/choix_sujet/comprehension', 'comprehension')->name('prof.choix_sujet.comprehension');
 
     Route::get('prof/info_examen', 'info_examen')->name('prof.info_examen');
+
+    // post
+    Route::post('prof/choix_sujet/qcm/post', 'post_qcm')->name('post_qcm');
+    Route::post('prof/choix_sujet/relier_fleche/post', 'post_relier_fleche')->name('post.relier_fleche');
+    Route::post('prof/choix_sujet/mots_croises/post', 'post_mots_croises')->name('post.mots_croises');
+    Route::post('prof/choix_sujet/comprehension/post', 'comprehension_post')->name('post.comprehension_post');
+    Route::post('prof/choix_sujet/pendule/post', 'pendule_post')->name('post.pendule');
+    Route::post('prof/choix_sujet/redaction/post', 'redaction_post')->name('post.redaction');
+
+
+    // Vue global des sujets
+    Route::get('prof/choix_sujet/qcm/vue', 'vue_qcm')->name('prof.choix_sujet.qcm.vue');
+    Route::get('prof/choix_sujet/relier_fleche/vue', 'vue_relier_fleche')->name('prof.choix_sujet.relier_fleche.vue');
 });

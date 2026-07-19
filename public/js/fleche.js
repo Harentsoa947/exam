@@ -62,11 +62,16 @@ function nbr_aff(total){
     let gauche = ""
     let droite = ""
     for(let i=1; i<=total; i++){
+        const oldCouple = oldCouples[i] ?? {};
+        const valeurGauche = oldCouple.gauche ?? '';
+        const valeurDroite = oldCouple.droite ?? '';
         // <!-- ==================== COLONNE GAUCHE ==================== -->
         gauche += `<div class="relative">
             <input
                 type="text"
                 placeholder="Élément gauche ${i}"
+                name="couples[${i}][gauche]"
+                value="${valeurGauche}"
                 class="w-full rounded-lg border border-gray-300 px-4 py-3 pr-12 focus:ring-2 focus:ring-blue-500 outline-none">
 
             <div class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-blue-600 cursor-pointer item gauche"></div>
@@ -80,7 +85,9 @@ function nbr_aff(total){
 
                 <input
                     type="text"
+                    name="couples[${i}][droite]"
                     placeholder="Élément droite ${i}"
+                    value="${valeurDroite}"
                     class="w-full rounded-lg border border-gray-300 py-3 pl-12 pr-4 focus:ring-2 focus:ring-green-500 outline-none ">
 
             </div>`
@@ -88,3 +95,12 @@ function nbr_aff(total){
     document.getElementById('gauche').innerHTML = `<div class="space-y-4">${gauche}</div>`
     document.getElementById('droite').innerHTML = `<div class="space-y-4">${droite}</div>`
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+    const tailleOld = Object.keys(oldCouples).length;
+    if (tailleOld > 0) {
+        nombreCouples.value = tailleOld;
+        
+        nombreCouples.dispatchEvent(new Event('input'));
+    }
+});

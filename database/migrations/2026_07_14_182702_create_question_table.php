@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('question', function (Blueprint $table) {
             $table->id();
             $table->integer('ordre');
-            $table->foreignId('sujet_config_id')->constrained('sujet_configuration');
+            $table->foreignId('sujet_id')->constrained('sujets');
             $table->foreignId('types_id')->constrained('types_question');
             $table->foreignId('category_id')->constrained('categories');
             $table->timestamps();

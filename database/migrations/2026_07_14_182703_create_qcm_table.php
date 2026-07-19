@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('text_question');
             $table->string('image')->nullable();
             $table->string('video')->nullable();
+            $table->string('reponse_vraie')->nullable();
+            $table->boolean('isTrue')->nullable();
             $table->foreignId('forme_question')->constrained('choix_multiple')->nullable();
             $table->foreignId('question_id')->constrained('question')->nullable();
             $table->timestamps();
